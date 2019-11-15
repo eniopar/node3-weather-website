@@ -9,6 +9,8 @@ const forecast = require('./utils/forecast')
 // All express exports is a function!
 const app = express()
 
+const port = process.env.PORT || 3000  // env var PORT provided by Heroku
+
 // Server configuration
 
 // Define paths for Express config
@@ -109,6 +111,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log("Server listening on port 3000")
+app.listen(port, () => {
+    console.log("Server listening on port " + port)
 })
